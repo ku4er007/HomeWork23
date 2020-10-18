@@ -16,7 +16,7 @@ public class BaseForTest {
     public void setupDriver() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, 30);
+        wait = new WebDriverWait(driver, 35);
     }
 
     @AfterClass

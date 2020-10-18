@@ -13,6 +13,9 @@ public class Task1 extends BaseForTest {
     String password = "QwErTy1996";
     String newMessageButton = "//div[@class='T-I T-I-KE L3']";
     String newMessageTitle = "//div[@class='aYF'][contains(text(),'Новое сообщение')]";
+    String messageBody = "//div[@aria-label='Тело письма']";
+    String message = "Тестовое письмо - Тестовая, Тестовое письмо - Тестовая, Тестовое письмо - Тестовая";
+    String sendButton = "//div[@class='T-I J-J5-Ji aoO v7 T-I-atl L3'][contains(text(),'Отправить')]";
 
 
     @BeforeMethod
@@ -27,9 +30,13 @@ public class Task1 extends BaseForTest {
         wait.until(visibilityOfElementLocated(By.xpath(passwordInputField))).sendKeys(password + Keys.ENTER);
         wait.until(visibilityOfElementLocated(By.xpath(newMessageButton))).click();
         wait.until(visibilityOfElementLocated(By.xpath(newMessageTitle)));
-        driver.findElement(By.xpath("//div[@class='oL aDm']")).sendKeys(email + Keys.ENTER);
+//        driver.findElement(By.xpath("//tbody[@class='bze']")).sendKeys(email + Keys.ENTER);
         driver.findElement(By.xpath("//input[@name='subjectbox']")).sendKeys("Тема письма - Тестовая");
-        //доделать ввод письма и отправку
+        driver.findElement(By.xpath(messageBody)).sendKeys(message);
+        driver.findElement(By.xpath(sendButton)).click();
+
+
+
 
 
     }
