@@ -33,7 +33,6 @@ public class Task2 extends BaseForTest {
         driver.navigate().refresh();
         assertEquals(driver.getCurrentUrl(), loggedInUser);
 
-        //Необходимо теперь сравнить что скссия активна
 
 
     }
